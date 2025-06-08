@@ -35,34 +35,6 @@ const products = [
     rating: 4.7,
     image: `https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=400&h=300&fit=crop`,
     description: "Professional account management system"
-  },
-  {
-    id: 4,
-    name: "Advanced Analytics Dashboard",
-    category: "Analytics",
-    price: 99.99,
-    rating: 4.9,
-    image: `https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=400&h=300&fit=crop`,
-    description: "Comprehensive analytics and reporting tools",
-    popular: true
-  },
-  {
-    id: 5,
-    name: "Automation Scripts",
-    category: "Automation",
-    price: 39.99,
-    rating: 4.6,
-    image: `https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=300&fit=crop`,
-    description: "Powerful automation solutions"
-  },
-  {
-    id: 6,
-    name: "API Integration Package",
-    category: "Development",
-    price: 59.99,
-    rating: 4.8,
-    image: `https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=400&h=300&fit=crop`,
-    description: "Complete API integration toolkit"
   }
 ];
 
@@ -70,7 +42,7 @@ const Store = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
 
-  const categories = ["All", "Performance", "Security", "Tools", "Analytics", "Automation", "Development"];
+  const categories = ["All", "Performance", "Security", "Tools"];
 
   const filteredProducts = products.filter(product => {
     const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
