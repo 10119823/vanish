@@ -55,7 +55,7 @@ const Support = () => {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <Button className="w-full glow-effect" onClick={() => window.open('https://discord.gg/vanish', '_blank')}>
+              <Button className="w-full glow-effect" onClick={() => window.open('https://discord.gg/fgtRKPUqQc', '_blank')}>
                 Join Discord
               </Button>
               <div className="flex items-center justify-center mt-4 text-sm text-muted-foreground">
