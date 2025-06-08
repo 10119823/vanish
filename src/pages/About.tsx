@@ -26,13 +26,6 @@ const About = () => {
     }
   ];
 
-  const stats = [
-    { number: "10K+", label: "Happy Customers" },
-    { number: "99.9%", label: "Uptime Guarantee" },
-    { number: "24/7", label: "Support Available" },
-    { number: "50+", label: "Premium Products" }
-  ];
-
   return (
     <div className="min-h-screen py-8">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -53,16 +46,6 @@ const About = () => {
           <p className="text-lg font-semibold text-primary max-w-4xl mx-auto leading-relaxed mt-6">
             Join us and let's change the game.
           </p>
-        </div>
-
-        {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
-          {stats.map((stat, index) => (
-            <div key={index} className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">{stat.number}</div>
-              <div className="text-muted-foreground">{stat.label}</div>
-            </div>
-          ))}
         </div>
 
         {/* Values */}

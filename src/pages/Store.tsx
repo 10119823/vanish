@@ -10,9 +10,9 @@ import { Search, Filter, Star } from "lucide-react";
 const products = [
   {
     id: 1,
-    name: "Premium Boost Package",
+    name: "Vanish Optimization v1",
     category: "Performance",
-    price: 49.99,
+    price: 12.99,
     rating: 4.9,
     image: `https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?w=400&h=300&fit=crop`,
     description: "Advanced performance enhancement tools",
@@ -29,12 +29,12 @@ const products = [
   },
   {
     id: 3,
-    name: "Account Management Tools",
+    name: "VIP",
     category: "Tools",
     price: 29.99,
     rating: 4.7,
     image: `https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=400&h=300&fit=crop`,
-    description: "Professional account management system"
+    description: "VIP Discord Access in Vanish"
   }
 ];
 
