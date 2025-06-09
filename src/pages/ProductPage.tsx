@@ -6,32 +6,142 @@ import { Badge } from "@/components/ui/badge";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { ArrowLeft, Star, Shield, Zap, Download, MessageCircle } from "lucide-react";
 
+// Same products array as in Store.tsx
+const products = [
+  {
+    id: 1,
+    name: "Vanish Optimization v1",
+    category: "Performance",
+    price: 12.99,
+    rating: 4.9,
+    image: `https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?w=400&h=300&fit=crop`,
+    description: "Advanced performance enhancement tools",
+    popular: true
+  },
+  {
+    id: 2,
+    name: "Digital Security Suite",
+    category: "Security",
+    price: 79.99,
+    rating: 4.8,
+    image: `https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=300&fit=crop`,
+    description: "Complete security and privacy solutions"
+  },
+  {
+    id: 3,
+    name: "VIP",
+    category: "Tools",
+    price: 3.99,
+    rating: 4.7,
+    image: `https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=400&h=300&fit=crop`,
+    description: "VIP Discord Access in Vanish"
+  },
+  {
+    id: 4,
+    name: "VIP+",
+    category: "Tools",
+    price: 6.99,
+    rating: 4.8,
+    image: `https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=300&fit=crop`,
+    description: "VIP+ Discord Access in Vanish"
+  }
+];
+
 const ProductPage = () => {
   const { id } = useParams();
+  
+  // Find the product by ID
+  const product = products.find(p => p.id === parseInt(id || '1'));
+  
+  // Fallback to first product if not found
+  const currentProduct = product || products[0];
 
-  // Mock product data - in a real app, you'd fetch this based on the ID
-  const product = {
-    id: 1,
-    name: "Premium Boost Package",
-    category: "Performance",
-    price: 49.99,
-    rating: 4.9,
-    reviews: 234,
-    image: `https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?w=800&h=600&fit=crop`,
-    description: "Advanced performance enhancement tools designed to maximize your efficiency and results.",
-    features: [
-      "Advanced algorithm optimization",
-      "Real-time performance monitoring",
-      "Automated system tuning",
-      "24/7 priority support",
-      "Lifetime updates included"
-    ],
-    benefits: [
-      "Increase performance by up to 300%",
-      "Reduce system overhead",
-      "Improve user experience",
-      "Save time and resources"
-    ]
+  const reviews = 234;
+
+  // Dynamic features and benefits based on product
+  const getProductFeatures = (productName: string) => {
+    switch (productName) {
+      case "Vanish Optimization v1":
+        return [
+          "Advanced algorithm optimization",
+          "Real-time performance monitoring",
+          "Automated system tuning",
+          "24/7 priority support",
+          "Lifetime updates included"
+        ];
+      case "Digital Security Suite":
+        return [
+          "Complete privacy protection",
+          "Advanced encryption tools",
+          "Secure browsing features",
+          "Identity protection",
+          "24/7 security monitoring"
+        ];
+      case "VIP":
+        return [
+          "VIP Discord access",
+          "Exclusive channels",
+          "Priority support",
+          "Community benefits",
+          "Regular updates"
+        ];
+      case "VIP+":
+        return [
+          "VIP+ Discord access",
+          "All VIP features included",
+          "Premium exclusive channels",
+          "Advanced priority support",
+          "Beta access to new features"
+        ];
+      default:
+        return [
+          "Premium features",
+          "Priority support",
+          "Regular updates",
+          "Community access",
+          "Documentation included"
+        ];
+    }
+  };
+
+  const getProductBenefits = (productName: string) => {
+    switch (productName) {
+      case "Vanish Optimization v1":
+        return [
+          "Increase performance by up to 300%",
+          "Reduce system overhead",
+          "Improve user experience",
+          "Save time and resources"
+        ];
+      case "Digital Security Suite":
+        return [
+          "Complete online privacy",
+          "Protection from threats",
+          "Secure digital identity",
+          "Peace of mind browsing"
+        ];
+      case "VIP":
+        return [
+          "Access to exclusive community",
+          "Direct support from team",
+          "Early access to updates",
+          "Enhanced Discord experience"
+        ];
+      case "VIP+":
+        return [
+          "All VIP benefits plus more",
+          "Premium community access",
+          "Beta testing opportunities",
+          "Maximum Discord privileges"
+        ];
+      default:
+        return [
+          "Enhanced functionality",
+          "Improved experience",
+          "Priority access",
+          "Community benefits"
+        ];
+    }
   };
 
   const faqs = [
@@ -67,8 +177,8 @@ const ProductPage = () => {
           <div className="space-y-4">
             <div className="relative overflow-hidden rounded-xl">
               <img
-                src={product.image}
-                alt={product.name}
+                src={currentProduct.image}
+                alt={currentProduct.name}
                 className="w-full h-96 object-cover"
               />
             </div>
@@ -77,17 +187,17 @@ const ProductPage = () => {
           {/* Product Info */}
           <div className="space-y-6">
             <div>
-              <Badge className="mb-3">{product.category}</Badge>
-              <h1 className="text-3xl md:text-4xl font-bold mb-4">{product.name}</h1>
+              <Badge className="mb-3">{currentProduct.category}</Badge>
+              <h1 className="text-3xl md:text-4xl font-bold mb-4">{currentProduct.name}</h1>
               <div className="flex items-center mb-4">
                 <div className="flex items-center mr-4">
                   <Star className="h-5 w-5 fill-primary text-primary mr-1" />
-                  <span className="text-lg font-semibold">{product.rating}</span>
-                  <span className="text-muted-foreground ml-2">({product.reviews} reviews)</span>
+                  <span className="text-lg font-semibold">{currentProduct.rating}</span>
+                  <span className="text-muted-foreground ml-2">({reviews} reviews)</span>
                 </div>
               </div>
-              <p className="text-xl text-muted-foreground mb-6">{product.description}</p>
-              <div className="text-4xl font-bold text-primary mb-6">${product.price}</div>
+              <p className="text-xl text-muted-foreground mb-6">{currentProduct.description}</p>
+              <div className="text-4xl font-bold text-primary mb-6">${currentProduct.price}</div>
             </div>
 
             {/* Purchase Section */}
@@ -125,7 +235,7 @@ const ProductPage = () => {
             </CardHeader>
             <CardContent>
               <ul className="space-y-3">
-                {product.features.map((feature, index) => (
+                {getProductFeatures(currentProduct.name).map((feature, index) => (
                   <li key={index} className="flex items-center">
                     <div className="w-2 h-2 bg-primary rounded-full mr-3" />
                     {feature}
@@ -142,7 +252,7 @@ const ProductPage = () => {
             </CardHeader>
             <CardContent>
               <ul className="space-y-3">
-                {product.benefits.map((benefit, index) => (
+                {getProductBenefits(currentProduct.name).map((benefit, index) => (
                   <li key={index} className="flex items-center">
                     <div className="w-2 h-2 bg-primary rounded-full mr-3" />
                     {benefit}
