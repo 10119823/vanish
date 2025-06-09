@@ -34,7 +34,7 @@ const Support = () => {
               </Button>
               <div className="flex items-center justify-center mt-4 text-sm text-muted-foreground">
                 <Users className="h-4 w-4 mr-1" />
-                2,847 members online
+                1,247 members online
               </div>
             </CardContent>
           </Card>

@@ -1,4 +1,3 @@
-
 import { useParams, Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -6,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { ArrowLeft, Star, Shield, Zap, Download, MessageCircle } from "lucide-react";
 
-// Same products array as in Store.tsx
+// Updated products array without Digital Security Suite
 const products = [
   {
     id: 1,
@@ -17,15 +16,6 @@ const products = [
     image: `https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?w=400&h=300&fit=crop`,
     description: "Advanced performance enhancement tools",
     popular: true
-  },
-  {
-    id: 2,
-    name: "Digital Security Suite",
-    category: "Security",
-    price: 79.99,
-    rating: 4.8,
-    image: `https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=300&fit=crop`,
-    description: "Complete security and privacy solutions"
   },
   {
     id: 3,
@@ -69,14 +59,6 @@ const ProductPage = () => {
           "24/7 priority support",
           "Lifetime updates included"
         ];
-      case "Digital Security Suite":
-        return [
-          "Complete privacy protection",
-          "Advanced encryption tools",
-          "Secure browsing features",
-          "Identity protection",
-          "24/7 security monitoring"
-        ];
       case "VIP":
         return [
           "VIP Discord access",
@@ -112,13 +94,6 @@ const ProductPage = () => {
           "Reduce system overhead",
           "Improve user experience",
           "Save time and resources"
-        ];
-      case "Digital Security Suite":
-        return [
-          "Complete online privacy",
-          "Protection from threats",
-          "Secure digital identity",
-          "Peace of mind browsing"
         ];
       case "VIP":
         return [

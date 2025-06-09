@@ -19,15 +19,6 @@ const products = [
     popular: true
   },
   {
-    id: 2,
-    name: "Digital Security Suite",
-    category: "Security",
-    price: 79.99,
-    rating: 4.8,
-    image: `https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=300&fit=crop`,
-    description: "Complete security and privacy solutions"
-  },
-  {
     id: 3,
     name: "VIP",
     category: "Tools",
@@ -51,7 +42,7 @@ const Store = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
 
-  const categories = ["All", "Performance", "Security", "Tools"];
+  const categories = ["All", "Performance", "Tools"];
 
   const filteredProducts = products.filter(product => {
     const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
