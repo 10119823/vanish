@@ -31,10 +31,19 @@ const products = [
     id: 3,
     name: "VIP",
     category: "Tools",
-    price: 29.99,
+    price: 3.99,
     rating: 4.7,
     image: `https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=400&h=300&fit=crop`,
     description: "VIP Discord Access in Vanish"
+  },
+  {
+    id: 4,
+    name: "VIP+",
+    category: "Tools",
+    price: 6.99,
+    rating: 4.8,
+    image: `https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=300&fit=crop`,
+    description: "VIP+ Discord Access in Vanish"
   }
 ];
 
