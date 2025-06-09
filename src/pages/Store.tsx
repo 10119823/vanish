@@ -14,7 +14,7 @@ const products = [
     category: "Performance",
     price: 12.99,
     rating: 4.9,
-    image: `https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?w=400&h=300&fit=crop`,
+    image: "https://i.postimg.cc/qMBsJwk6/Vanish-Logo.png",
     description: "Advanced performance enhancement tools",
     popular: true
   },
@@ -24,7 +24,7 @@ const products = [
     category: "Tools",
     price: 3.99,
     rating: 4.7,
-    image: `https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=400&h=300&fit=crop`,
+    image: "https://i.postimg.cc/qMBsJwk6/Vanish-Logo.png",
     description: "VIP Discord Access in Vanish"
   },
   {
@@ -33,7 +33,7 @@ const products = [
     category: "Tools",
     price: 6.99,
     rating: 4.8,
-    image: `https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=300&fit=crop`,
+    image: "https://i.postimg.cc/qMBsJwk6/Vanish-Logo.png",
     description: "VIP+ Discord Access in Vanish"
   }
 ];
