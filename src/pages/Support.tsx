@@ -49,7 +49,7 @@ const Support = () => {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <Button variant="outline" className="w-full" onClick={() => window.location.href = 'mailto:support@vanish.com'}>
+              <Button variant="outline" className="w-full" onClick={() => window.location.href = 'mailto:vanishopti@gmail.com'}>
                 Send Email
               </Button>
               <div className="flex items-center justify-center mt-4 text-sm text-muted-foreground">
